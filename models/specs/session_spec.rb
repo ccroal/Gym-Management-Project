@@ -7,7 +7,7 @@ class TestSession < MiniTest::Test
   def setup()
     options = {
       'workshop_id' => '1',
-      'time' => '15:00',
+      'start_time' => '15:00',
       'date' => '21st Dec',
       'capacity' => 15
     }
@@ -15,7 +15,7 @@ class TestSession < MiniTest::Test
     @session1 = Session.new(options)
   end
 
-  def test_session_has_time()
+  def test_session_has_start_time()
     assert_equal('15:00', @session1.time)
   end
 

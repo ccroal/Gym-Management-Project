@@ -8,7 +8,8 @@ class TestMember < MiniTest::Test
     options = {
       'first_name' => 'Sarah',
       'last_name' => 'Smith',
-      'age' => 24
+      'age' => 24,
+      'email' => 'sarah@email.com'
     }
     @member1 = Member.new(options)
   end
@@ -24,4 +25,9 @@ class TestMember < MiniTest::Test
   def test_member_has_age()
     assert_equal(24, @member1.age)
   end
+
+  def test_member_has_email()
+    assert_equal('sarah@email.com', @member.email)
+  end
+  
 end
