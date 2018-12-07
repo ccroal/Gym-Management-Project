@@ -23,7 +23,12 @@ class TestSession < MiniTest::Test
     assert_equal('21st Dec', @session1.date)
   end
 
-  def test_session_has_spaces()
+  def test_session_has_a_capacity()
     assert_equal(15, @session1.capacity)
   end
+
+  def test_session_has_workshop_id()
+    assert_equal(1, @session1.workshop_id)
+  end
+
 end

@@ -11,4 +11,5 @@ class Session
     @capacity = options['capacity'].to_i
   end
 
+
 end

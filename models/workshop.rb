@@ -9,5 +9,6 @@ class Workshop
     @instructor = options['instructor']
   end
 
+  
 
 end
