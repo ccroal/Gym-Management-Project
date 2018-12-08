@@ -55,4 +55,12 @@ class Session
     workshop = Workshop.new(workshop_hash)
     return workshop
   end
+
+  def members()
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON members.id = bookings.member_id WHERE bookings.session_id = $1"
+    values = [@id]
+    members_array = SqlRunner.run(sql, values)
+    results =  members_array.map{ |member| Member.new(member)}
+    return results
+  end
 end

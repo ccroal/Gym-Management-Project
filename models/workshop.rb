@@ -58,4 +58,5 @@ class Workshop
     sessions = results.map{ |session| Session.new(session) }
     return sessions
   end
+
 end
