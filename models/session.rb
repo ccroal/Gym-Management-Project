@@ -40,6 +40,12 @@ class Session
     SqlRunner.run(sql, values)
   end
 
+  def update()
+    sql = "UPDATE sessions SET (workshop_id, start_time, start_date, capacity) = ($1, $2, $3, $4) WHERE id = $5"
+    values = [@workshop_id, @start_time, @start_date, @capacity, @id]
+    SqlRunner.run(sql, values)
+  end
+
   # def workshop()
   #   sql = "SELECT * FROM workshops
   #   WHERE id = $1"

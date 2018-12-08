@@ -38,5 +38,9 @@ class Workshop
     SqlRunner.run(sql, values)
   end
 
-
+  def update()
+    sql = "UPDATE workshops SET (type, instructor) = ($1, $2) WHERE id = $3"
+    values = [@type, @instructor, @id]
+    SqlRunner.run(sql, values)
+  end
 end
