@@ -46,13 +46,13 @@ class Session
     SqlRunner.run(sql, values)
   end
 
-  # def workshop()
-  #   sql = "SELECT * FROM workshops
-  #   WHERE id = $1"
-  #   values = [@workshop_id]
-  #   results = SqlRunner.run(sql, values)
-  #   workshop_hash = results[0]
-  #   workshop = Workshop.new(workshop_hash)
-  #   return workshop
-  # end
+  def workshop()
+    sql = "SELECT * FROM workshops
+    WHERE id = $1"
+    values = [@workshop_id]
+    results = SqlRunner.run(sql, values)
+    workshop_hash = results[0]
+    workshop = Workshop.new(workshop_hash)
+    return workshop
+  end
 end

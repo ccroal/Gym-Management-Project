@@ -43,4 +43,19 @@ class Workshop
     values = [@type, @instructor, @id]
     SqlRunner.run(sql, values)
   end
+
+  def update()
+    sql = "UPDATE workshops SET (type, instructor) = ($1, $2) WHERE id = $3"
+    values = [@type, @instructor, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def sessions()
+    sql = "SELECT * FROM sessions
+    WHERE workshop_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    sessions = results.map{ |session| Session.new(session) }
+    return sessions
+  end
 end
