@@ -35,4 +35,19 @@ class Booking
     SqlRunner.run(sql, values)
   end
 
+  def member()
+    sql = "SELECT * FROM members WHERE id = $1"
+    values = [@member_id]
+    member_hash = SqlRunner.run(sql, values).first
+    member = Member.new(member_hash)
+    return member
+  end
+
+  def session()
+    sql = "SELECT * FROM sessions WHERE id = $1"
+    values = [@session_id]
+    session_hash = SqlRunner.run(sql, values).first
+    session = Session.new(session_hash)
+    return session
+  end
 end
