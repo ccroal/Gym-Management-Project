@@ -1,6 +1,6 @@
-DROP TABLE workshops;
 DROP TABLE bookings;
 DROP TABLE sessions;
+DROP TABLE workshops;
 DROP TABLE members;
 
 CREATE TABLE members(
@@ -19,14 +19,14 @@ CREATE TABLE workshops(
 
 CREATE TABLE sessions(
   id SERIAL PRIMARY KEY,
-  workshop_id INT REFERENCES workshops(id),
-  start_time VARCHAR,
-  date VARCHAR(255),
+  workshop_id INT REFERENCES workshops(id) ON DELETE CASCADE,
+  start_time VARCHAR(255),
+  start_date VARCHAR(255),
   capacity INT
 );
 
 CREATE TABLE bookings(
   id SERIAL PRIMARY KEY,
-  member_id INT REFERENCES members(id),
-  session_id INT REFERENCES sessions(id)
+  member_id INT REFERENCES members(id) ON DELETE CASCADE,
+  session_id INT REFERENCES sessions(id) ON DELETE CASCADE
 );

@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner.rb')
+
 class Member
 
   attr_reader :id
@@ -11,4 +13,29 @@ class Member
     @email = options['email']
   end
 
+  def save()
+    sql = "INSERT INTO members (first_name, last_name, age, email)
+    VALUES ($1, $2, $3, $4) RETURNING id"
+    values = [@first_name, @last_name, @age, @email]
+    member = SqlRunner.run(sql, values).first
+    @id = member['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM members"
+    members = SqlRunner.run(sql)
+    result = members.map {|member| Member.new(member)}
+    return result
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM members"
+    SqlRunner.run(sql)
+  end
+
+  def delete()
+    sql = "DELETE FROM members WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 end

@@ -8,7 +8,7 @@ class TestSession < MiniTest::Test
     options = {
       'workshop_id' => '1',
       'start_time' => '15:00',
-      'date' => '21st Dec',
+      'start_date' => '21st Dec',
       'capacity' => 15
     }
 
