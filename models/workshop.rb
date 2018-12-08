@@ -44,10 +44,11 @@ class Workshop
     SqlRunner.run(sql, values)
   end
 
-  def update()
-    sql = "UPDATE workshops SET (type, instructor) = ($1, $2) WHERE id = $3"
-    values = [@type, @instructor, @id]
-    SqlRunner.run(sql, values)
+  def self.find(id)
+    sql = "SELECT * FROM workshops WHERE id = $1"
+    values = [id]
+    workshop =  SqlRunner.run(sql, values).first
+    return Workshop.new(workshop)
   end
 
   def sessions()

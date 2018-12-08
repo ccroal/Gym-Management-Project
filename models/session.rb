@@ -47,6 +47,13 @@ class Session
     SqlRunner.run(sql, values)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM sessions WHERE id = $1"
+    values = [id]
+    session =  SqlRunner.run(sql, values).first
+    return Session.new(session)
+  end
+
   def workshop()
     sql = "SELECT * FROM workshops
     WHERE id = $1"
@@ -77,5 +84,5 @@ class Session
       nil
     end
   end
-  
+
 end
