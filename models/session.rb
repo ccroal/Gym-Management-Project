@@ -5,7 +5,7 @@ require_relative('./member.rb')
 class Session
 
   attr_reader :id
-  attr_accessor :workshop_id, :time, :start_date, :capacity
+  attr_accessor :workshop_id, :start_time, :start_date, :capacity
 
   def initialize(options)
     @id = options['id'].to_i if ['id']
@@ -64,4 +64,18 @@ class Session
     results =  members_array.map{ |member| Member.new(member)}
     return results
   end
+
+  def reduce_availabilty()
+      @capacity -= 1
+      update()
+  end
+
+  def availabilty?()
+    if @capacity > 0
+      return true
+    else
+      nil
+    end
+  end
+  
 end

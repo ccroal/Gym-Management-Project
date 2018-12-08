@@ -16,11 +16,11 @@ class TestSession < MiniTest::Test
   end
 
   def test_session_has_start_time()
-    assert_equal('15:00', @session1.time)
+    assert_equal('15:00', @session1.start_time)
   end
 
   def test_session_has_date()
-    assert_equal('21st Dec', @session1.date)
+    assert_equal('21st Dec', @session1.start_date)
   end
 
   def test_session_has_a_capacity()
@@ -31,4 +31,12 @@ class TestSession < MiniTest::Test
     assert_equal(1, @session1.workshop_id)
   end
 
+  def test_reduce_availability()
+    @session1.reduce_availabilty
+    assert_equal(14, @session1.capacity)
+  end
+
+  def test_availabilty()
+    assert_equal(true, @session1.availabilty?)
+  end
 end
