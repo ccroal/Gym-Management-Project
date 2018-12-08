@@ -1,0 +1,9 @@
+<h1>All Members</h1>
+
+  <% for member in @members %>
+    <p>First Name: <%= member.first_name %></p>
+    <p>Last Name: <%= member.last_name %></p>
+    <p>Age: <%= member.age %></p>
+    <p>Email: <%= member.email%></p>
+    <hr />
+  <% end %>
