@@ -1,0 +1,7 @@
+<h1>All Workshops</h1>
+
+<% for workshop in @workshops%>
+  <p>Type: <%= workshop.type %></p>
+  <p>Instructor: <%= workshop.instructor %></p>
+  <hr />
+<% end %>
