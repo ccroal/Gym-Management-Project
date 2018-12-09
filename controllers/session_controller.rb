@@ -1,5 +1,6 @@
 require_relative('../models/session.rb')
 require_relative('../models/workshop.rb')
+require_relative('../models/booking.rb')
 also_reload('../models/*')
 
 get '/sessions' do
@@ -33,4 +34,9 @@ post '/sessions/:id/delete' do
   session = Session.find(params[:id])
   session.delete
   redirect to '/sessions'
+end
+
+get '/sessions/:id/bookings' do
+  @session = Session.find(params[:id])
+  erb(:"sessions/bookings")
 end
