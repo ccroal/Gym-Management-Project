@@ -1,0 +1,8 @@
+<h1>Sessions Booked:</h1>
+
+<% for session in @member.sessions %>
+  <p>Type: <%= session.workshop.type %></p>
+  <p>Date: <%= session.start_date %></p>
+  <p>Time: <%= session.start_time %></p>
+  <hr />
+<% end %>

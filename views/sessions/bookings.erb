@@ -1,7 +1,7 @@
 <h1>Bookings</h1>
 
 <% for member in @session.members %>
-<p>Members:  <%= member.first_name%> <%= member.last_name %></p>
+<p>Member:  <%= member.first_name%> <%= member.last_name %></p>
 <% end %>
 
 <a href="/bookings/new">Make Booking</a>
