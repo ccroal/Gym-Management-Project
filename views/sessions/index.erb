@@ -11,9 +11,7 @@
 
 <a href="/sessions/<%= session.id %>/edit"> Edit Session</a>
 <hr />
-<a href="/bookings/new">Make Booking</a>
-<hr />
-<a href="/sessions/<%= session.id %>/bookings">Manage Booking</a>
+<a href="/sessions/<%= session.id %>/bookings">Manage Bookings</a>
 <hr />
 <form action="/sessions/<%=session.id%>/delete" method="post">
   <input type="submit" value="Delete Session">
