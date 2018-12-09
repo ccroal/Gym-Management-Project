@@ -6,8 +6,8 @@
     for="select a session:">Select a Session:
       <select name="session_id">
         <% for session in @sessions %>
-          <option 
-          value="<%= session.id %>"> <%= session.start_date %> <%= session.start_time %>
+          <option
+          value="<%= session.id %>"> <%= session.workshop.type %> <%= session.start_date %> <%= session.start_time %>
         </option>
         <% end %>
       </select>
