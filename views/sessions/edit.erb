@@ -1,0 +1,28 @@
+<h1>Edit Session</h1>
+
+<form action="/sessions/<%= @session.id %>" method="post">
+
+  <label
+    for="Select a workshop:"> Select a Workshop:
+      <select name="workshop_id">
+        <% for workshop in @workshops %>
+          <option
+          <%= 'selected'if workshop.id == @session.workshop_id%>
+          value ="<%= workshop.id %>"> Type: <%= workshop.type %> Instructor: <%= workshop.instructor %>
+          </option>
+        <% end %>
+      </select>
+
+  </label>
+  <label for="start_date">Start Date:</label>
+  <input type="text" name="start_date" value="<% @session.start_date %>">
+
+  <label for="start_time">Start Time:</label>
+  <input type="text" name="start_time" value="<% @session.start_time %>">
+
+  <label for="capacity">Capacity:</label>
+  <input type="number" name="capacity" value="<% @session.capacity %>">
+
+  <input type="submit" value="Edit Session">
+
+</form>

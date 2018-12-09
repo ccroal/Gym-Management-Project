@@ -16,3 +16,15 @@ post '/sessions' do
   Session.new(params).save
   redirect to '/sessions'
 end
+
+get '/sessions/:id/edit' do
+  @workshops= Workshop.all
+  @session = Session.find(params[:id])
+  erb(:"sessions/edit")
+end
+
+post '/sessions/:id' do
+  @session = Session.new(params)
+  @session.update
+  redirect to '/sessions'
+end
