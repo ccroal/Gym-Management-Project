@@ -1,3 +1,11 @@
 <h1>All Sessions</h1>
 
-<% for session in @sessions 
+<% for session in @sessions %>
+<p>Workshop: <%= session.workshop.type %></p>
+<p>Instructor: <%= session.workshop.instructor %></p>
+<p>Start Date: <%= session.start_date %></p>
+<p>Start Time: <%= session.start_time %></p>
+<p>Capacity: <%= session.capacity %></p>
+
+<hr />
+<% end %>
