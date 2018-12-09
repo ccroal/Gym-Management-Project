@@ -1,0 +1,22 @@
+<h1>New Session</h1>
+
+<form action="/sessions" method="post">
+  <label
+    for="Select a workshop:">Select a Workshop:
+      <select name="workshop_id">
+        <% for workshop in @workshops %>
+          <option value="<%= workshop.id %>">Type: <%= workshop.type %> Instructor: <%= workshop.instructor %></option>
+        <% end %>
+      </select>
+  </label>
+  <label for="start_date">Start Date:</label>
+  <input type="text" name="start_date">
+  <label for="start_time">Start Time:</label>
+  <input type="text" name="start_time">
+  <label for="capacity">Capacity:</label>
+  <input type="number" name="capacity" >
+
+  <input type="submit" value="Save">
+
+
+</form>
