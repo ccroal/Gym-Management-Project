@@ -25,3 +25,9 @@ post '/workshops/:id' do
   @workshop.update
   redirect to '/workshops'
 end
+
+post '/workshops/:id/delete' do
+  workshop = Workshop.find(params[:id])
+  workshop.delete
+  redirect to '/workshops'
+end

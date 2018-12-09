@@ -5,5 +5,8 @@
   <p>Instructor: <%= workshop.instructor %></p>
   <a href="/workshops/<%= workshop.id %>/edit">Edit Workshop</a>
   <hr />
+  <form class="" action="/workshops/<%= workshop.id %>/delete" method="post">
+    <input type="submit" value="Delete Workshop">
+  </form>
   <hr />
 <% end %>
