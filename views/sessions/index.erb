@@ -11,4 +11,8 @@
 
 <a href="/sessions/<%= session.id %>/edit"> Edit Session</a>
 <hr />
+<form action="/sessions/<%=session.id%>/delete" method="post">
+  <input type="submit" value="Delete Session">
+</form>
+<hr />
 <% end %>

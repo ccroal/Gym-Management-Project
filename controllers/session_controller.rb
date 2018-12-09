@@ -28,3 +28,9 @@ post '/sessions/:id' do
   @session.update
   redirect to '/sessions'
 end
+
+post '/sessions/:id/delete' do
+  session = Session.find(params[:id])
+  session.delete
+  redirect to '/sessions'
+end
