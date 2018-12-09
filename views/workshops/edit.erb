@@ -1,0 +1,10 @@
+<h1>Edit Workshop:</h1>
+
+<form action="/workshops/<%= @workshop.id %>" method="post">
+  <label for="type">Type:</label>
+  <input type="text" name="type" value="<%= @workshop.type %>">
+  <label for="instructor">Instructor:</label>
+  <input type="text" name ="instructor" value="<%=   @workshop.instructor%>">
+
+  <input type="submit" value="Edit Workshop">
+</form>

@@ -3,5 +3,7 @@
 <% for workshop in @workshops%>
   <p>Type: <%= workshop.type %></p>
   <p>Instructor: <%= workshop.instructor %></p>
+  <a href="/workshops/<%= workshop.id %>/edit">Edit Workshop</a>
+  <hr />
   <hr />
 <% end %>

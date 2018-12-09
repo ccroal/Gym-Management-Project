@@ -14,3 +14,14 @@ post '/workshops' do
   Workshop.new(params).save
   redirect to '/workshops'
 end
+
+get '/workshops/:id/edit' do
+  @workshop = Workshop.find(params[:id])
+  erb(:"workshops/edit")
+end
+
+post '/workshops/:id' do
+  @workshop = Workshop.new(params)
+  @workshop.update
+  redirect to '/workshops'
+end
