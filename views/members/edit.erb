@@ -1,14 +1,15 @@
 <h1>Edit <%= @member.first_name %> <%= @member.last_name %></h1>
 
 <form action="/members/<%= @member.id %>" method="post">
+  <input type="hidden" value="<%= @member.id %>">
   <label for="first_name">First Name:</label>
-  <input type="text" name="first_name" value="<%= @member.first_name %>">
+  <input type="text" name="first_name" id="first_name" value="<%= @member.first_name %>">
   <label for="last_name">Last Name:</label>
-  <input type="text" name="last_name" value="<%= @member.first_name %>">
+  <input type="text" name="last_name" id="last_name" value="<%= @member.last_name %>">
   <label for="age"> Age:</label>
-  <input type="number" name="age" value="<%= @member.age %>">
+  <input type="number" name="age" id="age" value="<%= @member.age %>">
   <label for="email">Email:</label>
-  <input type="text" name="email" value="<%= @member.email%>">
+  <input type="text" name="email" id="email "value="<%= @member.email%>">
 
-  <input type="submit" value="Save">
+  <input type="submit" value="Edit Member">
 </form>

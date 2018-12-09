@@ -6,3 +6,8 @@
 <p>Email: <%= @member.email%></p>
 
 <a href="/members/<%= @member.id %>/edit">Edit Details</a>
+
+<hr />
+<form action="/members/<%= @member.id %>/delete" method="post" >
+  <input type="submit" value="Delete Member">
+</form>
