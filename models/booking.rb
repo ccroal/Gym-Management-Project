@@ -4,6 +4,8 @@ require_relative('./session.rb')
 
 class Booking
 
+  attr_reader :id, :member_id, :session_id
+
   def initialize(options)
     @member_id = options['member_id'].to_i()
     @session_id = options['session_id'].to_i()
