@@ -9,7 +9,7 @@ class TestSession < MiniTest::Test
       'workshop_id' => '1',
       'start_time' => '15:00',
       'start_date' => '21st Dec',
-      'capacity' => 15
+      'capacity' => 3
     }
 
     @session1 = Session.new(options)
@@ -24,19 +24,40 @@ class TestSession < MiniTest::Test
   end
 
   def test_session_has_a_capacity()
-    assert_equal(15, @session1.capacity)
+    assert_equal(3, @session1.capacity)
   end
 
   def test_session_has_workshop_id()
     assert_equal(1, @session1.workshop_id)
   end
 
-  def test_reduce_availability()
-    @session1.reduce_availabilty
-    assert_equal(14, @session1.capacity)
+  def test_members_booked()
+    assert_equal(0, @session1.members_booked)
   end
 
-  def test_availabilty()
-    assert_equal(true, @session1.availabilty?)
+  def test_increase_booking()
+    @session1.increase_booking
+    assert_equal(1, @session1.members_booked)
+  end
+
+  def test_decrease_booking()
+    @session1.increase_booking
+    @session1.increase_booking
+    @session1.decrease_booking
+    assert_equal(1, @session1.members_booked)
+  end
+
+  def test_make_booking_space_availaable()
+    @session1.make_booking
+    assert_equal(1, @session1.members_booked)
+  end
+
+  def test_make_booking_space_full()
+    @session1.make_booking
+    @session1.make_booking
+    @session1.make_booking
+    @session1.make_booking
+    assert_equal(3, @session1.members_booked)
+    assert_equal(false, @session1.make_booking)
   end
 end

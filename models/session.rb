@@ -5,7 +5,7 @@ require_relative('./member.rb')
 class Session
 
   attr_reader :id
-  attr_accessor :workshop_id, :start_time, :start_date, :capacity
+  attr_accessor :workshop_id, :start_time, :start_date, :capacity, :members_booked
 
   def initialize(options)
     @id = options['id'].to_i if ['id']
@@ -13,6 +13,7 @@ class Session
     @start_time = options['start_time']
     @start_date = options['start_date']
     @capacity = options['capacity'].to_i
+    @members_booked = options['0'].to_i
   end
 
   def save()
@@ -72,17 +73,20 @@ class Session
     return results
   end
 
-  def reduce_availabilty()
-      @capacity -= 1
-      update()
+  def increase_booking()
+    @members_booked += 1
   end
 
-  def availabilty?()
-    if @capacity > 0
-      return true
+  def decrease_booking()
+    @members_booked -= 1
+  end
+
+  def make_booking()
+    if @capacity > @members_booked
+     increase_booking()
     else
-      nil
-    end
+     return false
+   end
   end
 
 end
