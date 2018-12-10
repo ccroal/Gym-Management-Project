@@ -1,5 +1,7 @@
 <h1>New Booking</h1>
 
+<% if @session.members.count < @session.capacity %>
+
 <form action="/bookings" method="post">
 
   <label
@@ -23,5 +25,9 @@
       </select>
   </label>
 
-  <input type="submit" value="Make Booking">
+  <input type="submit" value="Make Booking" >
 </form>
+
+<% else %>
+<%= p "Session is Full" %>
+<%end%>

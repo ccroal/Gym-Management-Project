@@ -31,33 +31,34 @@ class TestSession < MiniTest::Test
     assert_equal(1, @session1.workshop_id)
   end
 
-  def test_members_booked()
-    assert_equal(0, @session1.members_booked)
-  end
 
-  def test_increase_booking()
-    @session1.increase_booking
-    assert_equal(1, @session1.members_booked)
-  end
-
-  def test_decrease_booking()
-    @session1.increase_booking
-    @session1.increase_booking
-    @session1.decrease_booking
-    assert_equal(1, @session1.members_booked)
-  end
-
-  def test_make_booking_space_availaable()
-    @session1.make_booking
-    assert_equal(1, @session1.members_booked)
-  end
-
-  def test_make_booking_space_full()
-    @session1.make_booking
-    @session1.make_booking
-    @session1.make_booking
-    @session1.make_booking
-    assert_equal(3, @session1.members_booked)
-    assert_equal(false, @session1.make_booking)
-  end
-end
+#   def test_members_booked()
+#     assert_equal(0, @session1.members_booked)
+#   end
+#
+#   def test_increase_booking()
+#     @session1.increase_booking
+#     assert_equal(1, @session1.members_booked)
+#   end
+#
+#   def test_decrease_booking()
+#     @session1.increase_booking
+#     @session1.increase_booking
+#     @session1.decrease_booking
+#     assert_equal(1, @session1.members_booked)
+#   end
+#
+#   def test_make_booking_space_availaable()
+#     @session1.make_booking
+#     assert_equal(1, @session1.members_booked)
+#   end
+#
+#   def test_make_booking_space_full()
+#     @session1.make_booking
+#     @session1.make_booking
+#     @session1.make_booking
+#     @session1.make_booking
+#     assert_equal(3, @session1.members_booked)
+#     assert_equal(false, @session1.make_booking)
+#   end
+# end

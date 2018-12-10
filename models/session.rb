@@ -5,7 +5,7 @@ require_relative('./member.rb')
 class Session
 
   attr_reader :id
-  attr_accessor :workshop_id, :start_time, :start_date, :capacity, :members_booked
+  attr_accessor :workshop_id, :start_time, :start_date, :capacity
 
   def initialize(options)
     @id = options['id'].to_i if ['id']
@@ -13,7 +13,6 @@ class Session
     @start_time = options['start_time']
     @start_date = options['start_date']
     @capacity = options['capacity'].to_i
-    @members_booked = options['0'].to_i
   end
 
   def save()

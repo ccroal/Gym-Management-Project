@@ -14,3 +14,8 @@ post '/bookings' do
   booking.save
   erb(:"bookings/confirmation")
 end
+
+post '/bookings/:id/delete' do
+  booking = Booking.find(params[:id])
+  booking.delete
+end
