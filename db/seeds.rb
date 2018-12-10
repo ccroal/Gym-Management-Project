@@ -35,7 +35,7 @@ session1 = Session.new({
   'workshop_id' => workshop1.id,
   'start_time' => '15:00',
   'start_date' => '21st Dec',
-  'capacity' => 15
+  'capacity' => 3
 })
 
 session1.save
