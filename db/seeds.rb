@@ -34,7 +34,7 @@ workshop3.save
 session1 = Session.new({
   'workshop_id' => workshop1.id,
   'start_time' => '15:00',
-  'start_date' => '21st Dec',
+  'start_date' => '21/Dec',
   'capacity' => 3
 })
 
@@ -43,7 +43,7 @@ session1.save
 session2 = Session.new({
   'workshop_id' => workshop1.id,
   'start_time' => '10:00',
-  'start_date' => '22nd Dec',
+  'start_date' => '22/Dec',
   'capacity' => 10
 })
 
@@ -52,7 +52,7 @@ session2.save
 session3 = Session.new({
   'workshop_id' => workshop2.id,
   'start_time' => '13:00',
-  'start_date' => '22nd Dec',
+  'start_date' => '22/Dec',
   'capacity' => 20
 })
 
@@ -61,7 +61,7 @@ session3.save
 session4 = Session.new({
   'workshop_id' => workshop2.id,
   'start_time' => '20:00',
-  'start_date' => '23rd Dec',
+  'start_date' => '23/Dec',
   'capacity' => 20
 })
 
@@ -71,7 +71,7 @@ session4.save
 session5 = Session.new({
   'workshop_id' => workshop3.id,
   'start_time' => '09:00',
-  'start_date' => '23rd Dec',
+  'start_date' => '23/Dec',
   'capacity' => 30
 })
 
@@ -80,7 +80,7 @@ session5.save
 session6 = Session.new({
   'workshop_id' => workshop3.id,
   'start_time' => '15:00',
-  'start_date' => '23rd Dec',
+  'start_date' => '23/Dec',
   'capacity' => 20
 })
 

@@ -72,20 +72,30 @@ class Session
     return results
   end
 
-  def increase_booking()
-    @members_booked += 1
+  def booking()
+    sql = "SELECT * from bookings WHERE session_id = $1"
+    values = [@id]
+    booking_array = SqlRunner.run(sql, values)
+    results = booking_array.map{|booking| Booking.new(booking)}
+    return results
   end
 
-  def decrease_booking()
-    @members_booked -= 1
-  end
+  #Don't need theses methods in current iteration
 
-  def make_booking()
-    if @capacity > @members_booked
-     increase_booking()
-    else
-     return false
-   end
-  end
+  # def increase_booking()
+  #   @members_booked += 1
+  # end
+  #
+  # def decrease_booking()
+  #   @members_booked -= 1
+  # end
+  #
+  # def make_booking()
+  #   if @capacity > @members_booked
+  #    increase_booking()
+  #   else
+  #    return false
+  #  end
+  # end
 
 end

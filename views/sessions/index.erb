@@ -5,8 +5,8 @@
 <% for session in @sessions %>
 <p>Workshop: <%= session.workshop.type %></p>
 <p>Instructor: <%= session.workshop.instructor %></p>
-<p>Start Date:(00:00) <%= session.start_date %></p>
-<p>Start Time:(DD/Month) <%= session.start_time %></p>
+<p>Start Date: <%= session.start_date %></p>
+<p>Start Time:<%= session.start_time %></p>
 <p>Capacity: <%= session.capacity %></p>
 
 <a href="/sessions/<%= session.id %>/edit"> Edit Session</a>
