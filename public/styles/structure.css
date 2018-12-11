@@ -3,7 +3,9 @@ body {
   background-size: 100%;
 }
 
+
 a:link, a:visited {
+  color: black;
   margin: 20px;
   font-family: arial;
   border: 1px solid black;
