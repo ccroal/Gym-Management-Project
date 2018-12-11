@@ -72,7 +72,7 @@ class Session
     return results
   end
 
-  def booking()
+  def bookings()
     sql = "SELECT * from bookings WHERE session_id = $1"
     values = [@id]
     booking_array = SqlRunner.run(sql, values)

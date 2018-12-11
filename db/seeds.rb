@@ -11,21 +11,21 @@ Member.delete_all
 
 
 workshop1 = Workshop.new({
-  'type' => 'spin',
+  'type' => 'Spin',
   'instructor' => 'Mark Twain'
 })
 
 workshop1.save
 
 workshop2 = Workshop.new({
-  'type' => 'body combat',
+  'type' => 'Body Combat',
   'instructor' => 'Jane Austen'
 })
 
 workshop2.save
 
 workshop3 = Workshop.new({
-  'type' => 'zumba',
+  'type' => 'Zumba',
   'instructor' => 'Anne Rice'
 })
 
