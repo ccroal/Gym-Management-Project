@@ -66,3 +66,9 @@ hr {
   background-color: black;
   width: 75%;
 }
+
+.delete {
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

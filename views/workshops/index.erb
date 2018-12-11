@@ -2,13 +2,15 @@
 
 <p><a href="/workshops/new">Create a new workshop</a></p>
 
+
 <% for workshop in @workshops%>
   <p>Type: <%= workshop.type %></p>
   <p>Instructor: <%= workshop.instructor %></p>
   <a href="/workshops/<%= workshop.id %>/edit">Edit Workshop</a>
-  <hr />
-  <form class="" action="/workshops/<%= workshop.id %>/delete" method="post">
+
+
+  <form class="delete" action="/workshops/<%= workshop.id %>/delete" method="post">
     <input type="submit" value="Delete Workshop">
   </form>
-  <hr />
+
 <% end %>
