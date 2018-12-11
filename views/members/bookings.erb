@@ -1,10 +1,18 @@
 <h1>Sessions Booked:</h1>
 
-No. of Sessions Booked: <%= @member.sessions.count %>
+<h2> No. of Sessions Booked:  <%= @member.sessions.count %> </h2>
 
 <% for session in @member.sessions %>
-  <p>Type: <%= session.workshop.type %></p>
-  <p>Date: <%= session.start_date %></p>
-  <p>Time: <%= session.start_time %></p>
-  <hr />
+  <table>
+  <tr>
+    <th>Type:</th>
+    <th>Date:</th>
+    <th>Time:</th>
+  </tr>
+  <tr>
+    <td><%= session.workshop.type %></td>
+    <td><%= session.start_date %></td>
+    <td><%= session.start_time %></td>
+  </tr>
+  </table>
 <% end %>
