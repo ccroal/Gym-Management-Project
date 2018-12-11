@@ -3,12 +3,14 @@ body {
   background-size: 100%;
 }
 
-a {
+a:link, a:visited {
+  margin: 20px;
   font-family: arial;
   border: 1px solid black;
   text-align: center;
   padding: 5px 10px;
 }
+
 
 nav ul {
   font-size: 20px;
@@ -37,15 +39,30 @@ nav a:link, a:visited {
   margin-left: 200px;
 }
 
-h1 {
+h1, h2 {
   font-family: arial;
   font-weight: bold;
+  margin-left: 20px
 }
 
 p {
   font-family: arial;
+  font-weight: bold;
+  margin-left: 20px;
 }
 
 form {
   font-family: arial;
+}
+
+.session form {
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+hr {
+  display: block;
+  background-color: black;
+  width: 75%;
 }

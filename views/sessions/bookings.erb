@@ -1,15 +1,19 @@
 <h1>Bookings</h1>
 
 <h2>Session Details:</h2>
+
+<div class="session_details">
 <p>Type: <%= @session.workshop.type %></p>
 <p>Date: <%= @session.start_date %></p>
 <p>Time: <%= @session.start_time %></p>
 <p>Capacity: <%= @session.capacity %></p>
-
-<hr />
 <p>No. of Members Booked: <%= @session.members.count %></p>
+</div>
+
+<div class="newsession">
 <p><a href="/sessions/<%= @session.id %>/newbooking">Make Booking</a></p>
-<hr />
+</div>
+
 
 <% for member in @session.members %>
 <p>Member:  <%= member.first_name%> <%= member.last_name %></p>
