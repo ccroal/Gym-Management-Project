@@ -1,0 +1,11 @@
+<h1>All Members Currently Booked</h1>
+
+<p>Type:       <%=@workshop.type%></p>
+<p>Instructor: <%=@workshop.instructor%></p>
+
+<p>No of Members Booked:  <%= @workshop.members.count %></p>
+
+<p>Members: </p>
+<% for member in @workshop.members %>
+<p><%= member.first_name%> <%=member.last_name%></p>
+<% end %>

@@ -68,5 +68,5 @@ class Workshop
     return members
   end
 
-  
+
 end

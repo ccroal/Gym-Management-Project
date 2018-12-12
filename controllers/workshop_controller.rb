@@ -31,3 +31,8 @@ post '/workshops/:id/delete' do
   workshop.delete
   redirect to '/workshops'
 end
+
+get '/workshops/:id/bookings' do
+  @workshop = Workshop.find(params[:id])
+  erb(:"workshops/bookings")
+end
